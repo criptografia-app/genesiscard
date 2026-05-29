@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cyberpunk Tech Noir Color System */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Magenta/Pink primary color */
+    --primary: 320 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Cyan neon accent */
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 0 0% 5%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    /* Cyan neon for highlights */
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 320 100% 50% / 0.2;
+    --input: 0 0% 15%;
+    --ring: 320 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom cyberpunk tokens */
+    --neon-magenta: 320 100% 50%;
+    --neon-cyan: 180 100% 50%;
+    --deep-black: 0 0% 5%;
+    --grid-line: 320 100% 50% / 0.1;
+    
+    /* Gradients */
+    --gradient-cyberpunk: linear-gradient(135deg, hsl(320 100% 50% / 0.8), hsl(180 100% 50% / 0.6));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 5%), hsl(0 0% 8%));
+    
+    /* Shadows and glows */
+    --glow-magenta: 0 0 30px hsl(320 100% 50% / 0.6), 0 0 60px hsl(320 100% 50% / 0.4);
+    --glow-cyan: 0 0 30px hsl(180 100% 50% / 0.6), 0 0 60px hsl(180 100% 50% / 0.4);
+    
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 320 100% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 320 100% 50% / 0.2;
+    --sidebar-ring: 320 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', 'Inter', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .text-neon-magenta {
+    color: hsl(var(--neon-magenta));
+  }
+  
+  .text-neon-cyan {
+    color: hsl(var(--neon-cyan));
+  }
+  
+  .glow-magenta {
+    text-shadow: var(--glow-magenta);
+  }
+  
+  .glow-cyan {
+    text-shadow: var(--glow-cyan);
+  }
+  
+  .border-glow-magenta {
+    border-color: hsl(var(--neon-magenta));
+    box-shadow: var(--glow-magenta);
+  }
+  
+  .border-glow-cyan {
+    border-color: hsl(var(--neon-cyan));
+    box-shadow: var(--glow-cyan);
+  }
+  
+  .cyberpunk-grid {
+    background-image: 
+      linear-gradient(hsl(var(--grid-line)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--grid-line)) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
