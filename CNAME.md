@@ -1,0 +1,1 @@
+genesiscard.criptografia.net
